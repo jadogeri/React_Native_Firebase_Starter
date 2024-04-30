@@ -1,8 +1,8 @@
-// import * as React from "react";
+import * as React from "react";
 
 import { RootStackNavigator } from "./Stack/RootStackNavigator";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import DrawerNavigator from "../routes/Drawer/DrawerNavigator"
+import { DrawerNavigator } from "../routes/Drawer/DrawerNavigator"
 import { NavigationContainer } from "@react-navigation/native";
 
 

@@ -2,10 +2,11 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { TopTabNavigator } from "../TopTab/TopTabNavigator";
 import {DrawerContent} from "../../components/DrawerContent/DrawerContent"
 import { BottomTabNavigator } from "../BottomTab/BottomTabNavigator";
+import { ContactStackNavigator } from "../Stack/ContactStackNavigator";
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+export const DrawerNavigator = () => {
     // const [isLoading, setIsLoading] = React.useState(true);
     // const [userToken, setUserToken] = React.useState(null); 
     return (

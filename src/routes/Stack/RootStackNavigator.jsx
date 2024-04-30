@@ -1,9 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import GetStarted from "../screens/GetStarted/GetStarted";
-import Register from "../screens/Register/Register";
-import Login from "../screens/Login/Login";
-import ChangePassword from "../screens/LoginChangePassword/LoginChangePassword";
-import ForgotPassword from "../screens/LoginForgotPassword/LoginForgotPassword";
+import GetStarted from "../../screens/GetStarted/GetStarted";
+import Register from "../../screens/Register/Register";
+import Login from "../../screens/Login/Login";
+import ChangePassword from "../../screens/LoginChangePassword/LoginChangePassword";
+import ForgotPassword from "../../screens/LoginForgotPassword/LoginForgotPassword";
 import { screenOptionStyle } from "../screenOptionStyle";
 
 const RootStack = createStackNavigator();

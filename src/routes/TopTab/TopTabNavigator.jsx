@@ -2,8 +2,6 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { MainStackNavigator } from "../Stack/MainStackNavigator";
 import { ContactStackNavigator } from "../Stack/ContactStackNavigator";
-import { MainStackNavigator } from "../Stack/MainStackNavigator";
-import { ContactStackNavigator } from "../Stack/ContactStackNavigator";
 
 const TopTab = createMaterialTopTabNavigator();
 
