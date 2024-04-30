@@ -5,7 +5,7 @@ class User {
         this.username = "";
         this.email = "";
         this.password = "";
-        this.new_assword = "";
+        this.new_password = "";
         this.confirm_password = "";
 
     }
