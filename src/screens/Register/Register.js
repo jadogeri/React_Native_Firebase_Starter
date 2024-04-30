@@ -81,7 +81,7 @@ const Register = () => {
           or use social account
         </Text>
         <View style={styles.continueWithSocial}>        
-          <SocialAccountButton containerStyle={[styles.continueLayout]}
+          {/* <SocialAccountButton containerStyle={[styles.continueLayout]}
             imageStyle={styles.basiluserSolidIcon} source={require("../../../assets/icbaselineemail3.png")}
             textStyle={[styles.continueWithGoogle1, styles.username1Typo]} title="Continue with Google"
             onPress={()=>{alert("presssssssssssssss")}}
@@ -94,7 +94,7 @@ const Register = () => {
           <SocialAccountButton containerStyle={[styles.continueWithTwitter, styles.continueLayout]}
             imageStyle={styles.basiluserSolidIcon} source={require("../../../assets/icbaselineemail5.png")}
             textStyle={[styles.continueWithGoogle1, styles.username1Typo]} title="Continue with Facebook"
-          />
+          /> */}
 
         </View>
       </View>

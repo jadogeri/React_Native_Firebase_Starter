@@ -8,9 +8,6 @@ import Dashboard from "../screens/Dashboard/Dashboard"
 import ChangePassword from "../screens/LoginChangePassword/LoginChangePassword";
 import ForgotPassword from "../screens/LoginForgotPassword/LoginForgotPassword";
 
-
-
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 

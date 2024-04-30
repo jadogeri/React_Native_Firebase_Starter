@@ -49,7 +49,7 @@ const Login = () => {
         </Text>
         <View style={styles.continueWithSocial}>
      
-          <SocialAccountButton containerStyle={[styles.continueLayout]} //onPress={googleLoginHandler}
+          {/* <SocialAccountButton containerStyle={[styles.continueLayout]} //onPress={googleLoginHandler}
             imageStyle={styles.icbaselineEmailIcon3} source={require("../../../assets/icbaselineemail3.png")}
             textStyle={[styles.continueWithGoogle1, styles.emailTypo]} title="Continue with Google"
           />      
@@ -60,7 +60,7 @@ const Login = () => {
           <SocialAccountButton containerStyle={[styles.continueWithTwitter, styles.continueLayout]}
             imageStyle={styles.icbaselineEmailIcon3} source={require("../../../assets/icbaselineemail5.png")}
             textStyle={[styles.continueWithGoogle1, styles.emailTypo]} title="Continue with Facebook"
-          />
+          /> */}
         </View>
       </View>
       <ScreenTitle style={[styles.signIn, styles.signInTypo]} title="Sign in"/>    
