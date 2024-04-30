@@ -1,20 +1,14 @@
-const Stack = createNativeStackNavigator();
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import GetStarted from "../screens/GetStarted/GetStarted";
-import Register from "../screens/Register/Register";
-import Login from "../screens/Login/Login";
-import Dashboard from "../screens/Dashboard/Dashboard"
-import ChangePassword from "../screens/LoginChangePassword/LoginChangePassword";
-import ForgotPassword from "../screens/LoginForgotPassword/LoginForgotPassword";
-import { RootStackNavigator } from "./Root";
+// import * as React from "react";
+
+import { RootStackNavigator } from "./Stack/RootStackNavigator";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import DrawerNavigator from "../routes/Drawer/DrawerNavigator"
+import { NavigationContainer } from "@react-navigation/native";
 
 
 
 
-import { BottomTabNavigator } from "./BottomTab";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { BottomTabNavigator } from "./BottomTab/BottomTabNavigator";
 
 
 const Navigation = () => {
@@ -65,7 +59,9 @@ const Navigation = () => {
       </NavigationContainer> */}
       <NavigationContainer>
         {
-          auth?<BottomTabNavigator/> : <RootStackNavigator/>
+          // auth?<BottomTabNavigator/> : <RootStackNavigator/>
+          auth?<DrawerNavigator/> : <RootStackNavigator/>
+
         }
 
       </NavigationContainer>

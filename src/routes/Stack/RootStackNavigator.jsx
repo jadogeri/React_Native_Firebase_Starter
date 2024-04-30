@@ -2,51 +2,41 @@ import { createStackNavigator } from "@react-navigation/stack";
 import GetStarted from "../screens/GetStarted/GetStarted";
 import Register from "../screens/Register/Register";
 import Login from "../screens/Login/Login";
+import ChangePassword from "../screens/LoginChangePassword/LoginChangePassword";
+import ForgotPassword from "../screens/LoginForgotPassword/LoginForgotPassword";
+import { screenOptionStyle } from "../screenOptionStyle";
 
-const screenOptionStyle = {
-    headerStyle: {
-      backgroundColor: "#9AC4F8",
-    },
-    headerTintColor: "white",
-    headerBackTitle: "Back",
-  };
-
-const Root = createStackNavigator();
+const RootStack = createStackNavigator();
 
 export const RootStackNavigator = () => {
     return (
-      <Root.Navigator screenOptions={screenOptionStyle} headerMode='none'>
-        <Root.Screen            
+      <RootStack.Navigator screenOptions={screenOptionStyle} headerMode='none'>
+        <RootStack.Screen            
             name="GetStarted"
             component={GetStarted}
             options={{ headerShown: false }}
         />
-        <Root.Screen
+        <RootStack.Screen
             name="Register"
             component={Register}
             options={{ headerShown: false }}
         />
-        <Root.Screen
+        <RootStack.Screen
             name="Login"
             component={Login}
             options={{ headerShown: false }}
-        />               
-        <Root.Screen
-            name="Dashboard"
-            component={Dashboard}
-            options={{ headerShown: false }}
-        />
-        <Root.Screen
+        /> 
+      <RootStack.Screen
             name="ChangePassword"
             component={ChangePassword}
             options={{ headerShown: false }}
         /> 
-        <Root.Screen            
+        <RootStack.Screen            
             name="ForgotPassword"
             component={ForgotPassword}
             options={{ headerShown: false }}
         />  
-      </Root.Navigator>
+      </RootStack.Navigator>
     );
 };
 

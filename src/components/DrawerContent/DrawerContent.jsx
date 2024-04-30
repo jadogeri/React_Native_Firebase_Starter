@@ -29,7 +29,7 @@ export function DrawerContent(props) {
         setIsDarkTheme(!isDarkTheme);
     }
     //const { state,signout } = useContext(AuthContext);
-    const { username, email, id } = state
+    //const { username, email, id } = state
     const paperTheme = useTheme();
 
 
@@ -45,10 +45,10 @@ export function DrawerContent(props) {
                             size={50}
                         />
                         <View style={{ marginLeft: 15, flexDirection: 'column' }}>
-                            <Title style={styles.title}>username === {username}</Title>
+                            {/* <Title style={styles.title}>username === {username}</Title> */}
                             <Caption style={styles.caption}>@j_doe</Caption>
-                            <Caption style={styles.caption}>email === {email}</Caption>
-                            <Caption style={styles.caption}>id === {id}</Caption>
+                            {/* <Caption style={styles.caption}>email === {email}</Caption>
+                            <Caption style={styles.caption}>id === {id}</Caption> */}
 
 
                         </View>
