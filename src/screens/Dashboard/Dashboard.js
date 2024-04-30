@@ -16,6 +16,7 @@ import {
 import { useNavigation } from '@react-navigation/core'
 
 import getStorageData from '../../helpers/getStorageData'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 let books = []
 
@@ -176,7 +177,7 @@ const createUser =()=>{
 }
 
 const sign_out = ()=>{
-  signOut(auth).then(()=>{console.log("user signed out")}).catch((e)=> console.log(e))
+  signOut(auth).then(()=>{AsyncStorage.clear();console.log("user signed out")}).catch((e)=> console.log(e))
   navigation.navigate("Login")
 
 }

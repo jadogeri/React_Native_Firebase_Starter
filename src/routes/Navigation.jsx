@@ -7,16 +7,24 @@ import Login from "../screens/Login/Login";
 import Dashboard from "../screens/Dashboard/Dashboard"
 import ChangePassword from "../screens/LoginChangePassword/LoginChangePassword";
 import ForgotPassword from "../screens/LoginForgotPassword/LoginForgotPassword";
+import { RootStackNavigator } from "./Root";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
+
+
+
+import { BottomTabNavigator } from "./BottomTab";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 
 const Navigation = () => {
+    const auth = AsyncStorage.getItem("user");
+
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
  return (
     <>
-      <NavigationContainer>
+      {/* <NavigationContainer>
         {hideSplashScreen ? (
           
           <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -54,6 +62,12 @@ const Navigation = () => {
             />
           </Stack.Navigator>
         ) : null}
+      </NavigationContainer> */}
+      <NavigationContainer>
+        {
+          auth?<BottomTabNavigator/> : <RootStackNavigator/>
+        }
+
       </NavigationContainer>
     </>
   );
@@ -129,49 +143,8 @@ const TopTabNavigator = () => {
 }
 
 
-const BottomTabNavigator = () => {
-  return (
-    <Tab.Navigator initialRouteName='Search' screenOptions={{
-      tabBarInactiveTintColor: 'gold',
-      tabBarActiveBackgroundColor: 'brown',
-      activeColor: "pink",
-      inactiveColor: "black",
-      barStyle: { backgroundColor: 'purple' },
-    }} activeColor='gold' >
-      {/* <Tab.Screen name="Home" component={Home}
-        options={{ tabBarIcon: () => (<Icon name="ios-home" size={26} color="gold" />) }}
-      />
-      <Tab.Screen name="Search" component={MainFlowStackNavigator}
-        options={{ tabBarIcon: () => (<Icon name="ios-search" size={26} color="gold" />) }}
-      />
 
-<Tab.Screen name="Home" component={Home}
-        options={{ tabBarIcon: () => (<Icon name="ios-home" size={26} color="gold" />) }}
-      />
-      <Tab.Screen name="Search" component={MainFlowStackNavigator}
-        options={{ tabBarIcon: () => (<Icon name="ios-search" size={26} color="gold" />) }}
-      />
 
-      <Tab.Screen name="Setting" component={Setting}
-        options={{ tabBarIcon: () => (<Icon name="ios-settings" size={26} color="gold" />) }}
-      />
-      <Tab.Screen name="Chat" component={Chat}
-        options={{ tabBarIcon: () => (<Icon name="ios-chatbox-ellipses" size={26} color="gold" />) }}
-      />
-      <Tab.Screen name="Profile" component={Profile}
-        options={{ tabBarIcon: () => (<Icon name="ios-chatbox-ellipses" size={26} color="gold" />) }}
-      />
-    </Tab.Navigator>
-  );
-}
-
-const screenOptionStyle = {
-  headerStyle: {
-    backgroundColor: "#9AC4F8",
-  },
-  headerTintColor: "white",
-  headerBackTitle: "Back",
-};
 
 const MainStackNavigator = () => {
   return (
