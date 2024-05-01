@@ -1,12 +1,12 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../../screens/Home/Home";
-import { MainFlowStackNavigator } from "./MainFlowStackNavigator";
 import About from "../../screens/About/About"
 import { screenOptionStyle } from "../screenOptionStyle";
+import  MainFlowStackNavigator  from "./MainFlowStackNavigator";
 
 const Stack = createStackNavigator();
 
-export const MainStackNavigator = () => {
+ const MainStackNavigator = () => {
     return (
       <Stack.Navigator screenOptions={screenOptionStyle}>
         <Stack.Screen name="MainHome" component={Home} />
@@ -15,4 +15,7 @@ export const MainStackNavigator = () => {
       </Stack.Navigator>
     );
   };
+
+
+  export default MainStackNavigator;
   

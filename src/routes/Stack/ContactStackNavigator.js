@@ -6,7 +6,7 @@ import Contact from "../../screens/Contact/Contact"
 const Stack = createStackNavigator();
 
 
-export const ContactStackNavigator = () => {
+const ContactStackNavigator = () => {
     return (
       <Stack.Navigator screenOptions={screenOptionStyle}>
   
@@ -14,3 +14,5 @@ export const ContactStackNavigator = () => {
       </Stack.Navigator>
     );
   };
+
+export default ContactStackNavigator;

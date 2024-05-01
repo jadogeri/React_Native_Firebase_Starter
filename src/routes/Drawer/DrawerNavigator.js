@@ -1,8 +1,8 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { TopTabNavigator } from "../TopTab/TopTabNavigator";
-import {DrawerContent} from "../../components/DrawerContent/DrawerContent"
-import { BottomTabNavigator } from "../BottomTab/BottomTabNavigator";
-import { ContactStackNavigator } from "../Stack/ContactStackNavigator";
+import  TopTabNavigator  from "../TopTab/TopTabNavigator";
+import DrawerContent from "../../components/DrawerContent/DrawerContent"
+import  BottomTabNavigator  from "../BottomTab/BottomTabNavigator";
+import  ContactStackNavigator from "../Stack/ContactStackNavigator";
 
 const Drawer = createDrawerNavigator();
 
@@ -20,6 +20,8 @@ export const DrawerNavigator = () => {
           fontWeight: 'bold',
         }
       }}>
+                        <Drawer.Screen name="Homex" component={TopTabNavigator} />
+
         <Drawer.Screen name="BottomTabNav" component={BottomTabNavigator} />
         <Drawer.Screen name="Home1" component={TopTabNavigator} />
         <Drawer.Screen name="ContactDrawer" component={ContactStackNavigator} options={{ title: 'Contact' }} />

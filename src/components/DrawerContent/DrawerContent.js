@@ -21,8 +21,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './DrawerContentStyles';
 //import { Context as AuthContext } from '../../context/AuthContext'
+import TopTabNavigator from '../../routes/TopTab/TopTabNavigator';
 
-export function DrawerContent(props) {
+ const DrawerContent = (props) => {
 
     const [isDarkTheme,setIsDarkTheme]=useState(false);
     const toggleTheme = () =>{
@@ -100,6 +101,7 @@ export function DrawerContent(props) {
                         label="ChatRoom"
                         onPress={() => { props.navigation.navigate('Chat') }}
                     />
+                    
                     <DrawerItem
                         icon={({ color, size }) => (
                             <Icon
@@ -151,3 +153,6 @@ export function DrawerContent(props) {
         </Drawer.Section>
     </View>
 }
+
+
+export default DrawerContent

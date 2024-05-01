@@ -8,7 +8,7 @@ import Search from "../../screens/Search/Search";
 
 const Stack = createStackNavigator();
 
-export const MainFlowStackNavigator = () => {
+const MainFlowStackNavigator = () => {
     return (
       <Stack.Navigator initialRouteName='Search' screenOptions={screenOptionStyle}>
         <Stack.Screen name="Search" component={Search} />
@@ -19,3 +19,5 @@ export const MainFlowStackNavigator = () => {
       </Stack.Navigator>
     );
   };
+
+  export default MainFlowStackNavigator
