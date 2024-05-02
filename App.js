@@ -14,10 +14,6 @@ import {
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme 
 } from 'react-native-paper'
-import Contact from "./src/screens/Contact/Contact";
-import Profile from "./src/screens/Profile/Profile";
-import Chat from "./src/screens/Chat/Chat";
-import ScrollableTabView from "@sconnelley/react-native-top-tab-view";
 
 
 
@@ -71,12 +67,10 @@ export default function App() {
 
   return (
     <>
-    <ScrollableTabView>
-      <Chat/>
-      <Profile/>
-      <Contact/>
+    <PaperProvider theme={theme}>
 
-    </ScrollableTabView>
+      <Navigation />
+      </PaperProvider>
     </>
   );
 
@@ -105,62 +99,33 @@ const styles = StyleSheet.create({
   //   }
   // })
   
-
-
- //         #TODO
 /**
  * 
- * 
- * Based on your comments you should do something like below
-
-const Tab = createBottomTabNavigator();
-const TopTab = createMaterialTopTabNavigator();
-
-const BottomNavigator = () => {
-return (
-  <Tab.Navigator >
-    <Tab.Screen name="Post Room" component={PostANewRoomScreen} />
-    <Tab.Screen name="Rooms" component={HomeScreen} />
-  </Tab.Navigator>
- );
-}
-
-export const App = ()  => {
-return (
-<NavigationContainer>
-  <TopTab.Navigator>
-      <TopTab.Screen name="Bottom" component={BottomNavigator} />
-  </TopTab.Navigator>
-</NavigationContainer>
- );
-}
-
-export default App;
-By this the BottomNavigator which holds the bottom tabs would be nested inside the other one. and also stick to one navigation container.
- */
-
-
-
-
-
-
-
-/**
- * import * as React from 'react';
+import * as React from 'react';
 import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
+import Chat from './src/screens/Chat/Chat';
+import Profile from './src/screens/Profile/Profile';
+import Setting from './src/screens/Setting/Setting';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { NavigationContainer } from '@react-navigation/native';
+
+ import BottomTabNavigator from './src/routes/BottomTab/BottomTabNavigator';
 
 const FirstRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
 );
 
 const SecondRoute = () => (
+  
   <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
 );
 
 const renderScene = SceneMap({
   first: FirstRoute,
   second: SecondRoute,
+  three: Chat
 });
 
 export default function TabViewExample() {
@@ -170,15 +135,22 @@ export default function TabViewExample() {
   const [routes] = React.useState([
     { key: 'first', title: 'First' },
     { key: 'second', title: 'Second' },
+    {key:'three', title: "Chat"}
   ]);
 
   return (
+    <NavigationContainer >
+      
     <TabView
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
-      initialLayout={{ width: layout.width }}
-    />
+      initialLayout={{ width: layout.width , height :layout.height}}
+    >
+    < BottomTabNavigator />
+    </TabView>
+    </NavigationContainer>
   );
 }
+
  */
