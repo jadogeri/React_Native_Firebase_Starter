@@ -14,10 +14,6 @@ import {
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme 
 } from 'react-native-paper'
-import Contact from "./src/screens/Contact/Contact";
-import Profile from "./src/screens/Profile/Profile";
-import Chat from "./src/screens/Chat/Chat";
-import ScrollableTabView from "@sconnelley/react-native-top-tab-view";
 
 
 
@@ -71,12 +67,10 @@ export default function App() {
 
   return (
     <>
-    <ScrollableTabView>
-      <Chat/>
-      <Profile/>
-      <Contact/>
+    <PaperProvider theme={theme}>
 
-    </ScrollableTabView>
+      <Navigation />
+      </PaperProvider>
     </>
   );
 
@@ -137,48 +131,4 @@ return (
 
 export default App;
 By this the BottomNavigator which holds the bottom tabs would be nested inside the other one. and also stick to one navigation container.
- */
-
-
-
-
-
-
-
-/**
- * import * as React from 'react';
-import { View, useWindowDimensions } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
-
-const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
-);
-
-const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
-);
-
-const renderScene = SceneMap({
-  first: FirstRoute,
-  second: SecondRoute,
-});
-
-export default function TabViewExample() {
-  const layout = useWindowDimensions();
-
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'first', title: 'First' },
-    { key: 'second', title: 'Second' },
-  ]);
-
-  return (
-    <TabView
-      navigationState={{ index, routes }}
-      renderScene={renderScene}
-      onIndexChange={setIndex}
-      initialLayout={{ width: layout.width }}
-    />
-  );
-}
  */

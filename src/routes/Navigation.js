@@ -4,13 +4,14 @@ import { RootStackNavigator } from "./Stack/RootStackNavigator";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { DrawerNavigator } from "./Drawer/DrawerNavigator"
 import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 
 
 
 import { BottomTabNavigator } from "./BottomTab/BottomTabNavigator";
 
-
+const BottomTab = createBottomTabNavigator();
 const Navigation = () => {
     const auth = AsyncStorage.getItem("user");
 
@@ -58,12 +59,17 @@ const Navigation = () => {
         ) : null}
       </NavigationContainer> */}
       <NavigationContainer>
+      {/* <BottomTab.Navigator  > */}
+         {/* <BottomTab.Screen name="vvv" component={DrawerNavigator} /> */}
+        
+
         {
           // auth?<BottomTabNavigator/> : <RootStackNavigator/>
           auth?<DrawerNavigator/> : <RootStackNavigator/>
 
         }
 
+        {/* </BottomTab.Navigator> */}
       </NavigationContainer>
     </>
   );
