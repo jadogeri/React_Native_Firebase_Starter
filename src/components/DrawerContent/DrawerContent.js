@@ -21,7 +21,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './DrawerContentStyles';
 //import { Context as AuthContext } from '../../context/AuthContext'
-import TopTabNavigator from '../../routes/TopTab/TopTabNavigator';
 
  const DrawerContent = (props) => {
 

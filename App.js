@@ -1,6 +1,6 @@
 import * as React from "react"
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {  StyleSheet, Text, View } from 'react-native';
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./src/config/firebase";
 import Navigation from "./src/routes/Navigation";
@@ -67,8 +67,9 @@ export default function App() {
 
   return (
     <>
-    <PaperProvider theme={theme}>
-
+    <PaperProvider 
+    //theme={theme}
+    >
       <Navigation />
       </PaperProvider>
     </>

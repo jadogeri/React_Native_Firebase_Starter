@@ -83,6 +83,7 @@ const BottomTabNavigator = () => {
           options={{ BottomTabBarIcon: () => (<Icon name="ios-search" size={26} color="gold" />) }}
         /> */}
   
+  {/*
         <BottomTab.Screen name="Home" component={Home}
           options={{ tabBarIcon: () => (<Icon name="home" size={26} color="gold" />) }}
         />
@@ -99,14 +100,24 @@ const BottomTabNavigator = () => {
         <BottomTab.Screen name="Profile" component={Profile}
           options={{ tabBarIcon: () => (<Icon name="chatbox-ellipses" size={26} color="gold" />) }}
         />
-          {/* <BottomTab.Screen name="TabView1" component={TabViewer}
+
+        */}
+          <BottomTab.Screen name="TabView" component={TabViewer}
           options={{ tabBarIcon: () => (<Icon name="chatbox-ellipses" size={26} color="gold" />) }}
         />
     
-         <BottomTab.Screen name="TabView2" component={TabViewer} 
+         <BottomTab.Screen name="TabView1" component={TabViewer} 
           options={{ tabBarIcon: () => (<Icon name="chatbox-ellipses" size={26} color="gold" />) }}
-        /> */}
-    
+        />
+           <BottomTab.Screen name="TabView2" component={TabViewer} 
+          options={{ tabBarIcon: () => (<Icon name="chatbox-ellipses" size={26} color="gold" />) }}
+        />
+           <BottomTab.Screen name="TabView3" component={TabViewer} 
+          options={{ tabBarIcon: () => (<Icon name="chatbox-ellipses" size={26} color="gold" />) }}
+        />
+           <BottomTab.Screen name="TabView4" component={TabViewer} 
+          options={{ tabBarIcon: () => (<Icon name="chatbox-ellipses" size={26} color="gold" />) }}
+        />
       </BottomTab.Navigator>
     );
   }
