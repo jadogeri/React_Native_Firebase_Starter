@@ -130,7 +130,7 @@ import useToggleTheme from '../../hooks/useTheme';
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">
-                    <TouchableRipple onPress={() => {alert("pressed");toggleTheme()
+                    <TouchableRipple onPress={() => {toggleTheme()
                     }}>
                         <View style={styles.preference}>
                             <Text>Dark Theme</Text>

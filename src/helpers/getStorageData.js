@@ -6,13 +6,13 @@ const getStorageData = async ()=> {
     try{
         let data = await AsyncStorage.getItem("user")
         .then((res)=>{
-            alert("success get storage");
+            //alert("success get storage");
             console.log("success get storage");
             user = res
 
         })
         .catch(()=>{
-            alert("failure get storage")
+            //alert("failure get storage")
             console.log("failure get storage")
         })
     }catch(error){

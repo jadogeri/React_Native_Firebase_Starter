@@ -6,11 +6,11 @@ const setStorageData = (data)=> {
     const storageData = JSON.stringify(data);
     AsyncStorage.setItem("user",storageData)
     .then(()=>{
-        alert("success set storage");
+        //alert("success set storage");
         console.log("success set storage");
     })
     .catch(()=>{
-        alert("failure set storage")
+        //alert("failure set storage")
         console.log("failure set storage")
     })
     }catch(error){
