@@ -10,8 +10,10 @@ const Stack = createStackNavigator();
 
 const MainFlowStackNavigator = () => {
     return (
-      <Stack.Navigator initialRouteName='Search' screenOptions={screenOptionStyle}>
-        <Stack.Screen name="Search" component={Search} />
+      <Stack.Navigator  initialRouteName='Search' 
+        screenOptions={screenOptionStyle} 
+      >
+        <Stack.Screen name="SearchMainFlow" component={Search} />
         <Stack.Screen name="ResultsShow" component={Result} />
         <Stack.Screen name="WebResultsShow" component={WebResultsShow} />
         <Stack.Screen name="MapView" component={Map} />

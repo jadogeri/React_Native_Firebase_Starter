@@ -23,7 +23,7 @@ export const DrawerNavigator = () => {
         {/*Added TT for testing*/}
         {/* <Drawer.Screen name="TT" component={TopTabNavigator} /> */}
 
-        <Drawer.Screen name="BottomTabNav" component={BottomTabNavigator} />
+        <Drawer.Screen name="Dashboard" component={BottomTabNavigator} />
         {/* <Drawer.Screen name="Home1" component={TopTabNavigator} />
         <Drawer.Screen name="ContactDrawer" component={ContactStackNavigator} options={{ title: 'Contact' }} /> */}
   

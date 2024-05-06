@@ -14,7 +14,7 @@ import {
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme 
 } from 'react-native-paper'
-
+import {Provider as ThemeProvider} from "./src/contexts/ThemeContext"
 
 
 
@@ -67,11 +67,13 @@ export default function App() {
 
   return (
     <>
+    <ThemeProvider>
     <PaperProvider 
     //theme={theme}
     >
       <Navigation />
       </PaperProvider>
+      </ThemeProvider>
     </>
   );
 

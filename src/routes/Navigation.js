@@ -1,20 +1,29 @@
-import * as React from "react";
+import React, {useContext} from "react";
 
 import { RootStackNavigator } from "./Stack/RootStackNavigator";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { DrawerNavigator } from "./Drawer/DrawerNavigator"
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer,DarkTheme,DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Context as ThemeContext } from "../contexts/ThemeContext";
+import useTheme from "../hooks/useTheme";
 
 
 
 
 import { BottomTabNavigator } from "./BottomTab/BottomTabNavigator";
+import { set } from "firebase/database";
 
 const BottomTab = createBottomTabNavigator();
 const Navigation = () => {
-    const auth = AsyncStorage.getItem("user");
-
+    const {state : themeState} = useContext(ThemeContext)
+    const [auth, setAuth] = React.useState(null);
+     AsyncStorage.getItem("user").
+    then((res)=>{
+      alert(JSON.parse(res))
+      setAuth(res);
+    })
+    alert(typeof auth)
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
  return (
@@ -58,14 +67,14 @@ const Navigation = () => {
           </Stack.Navigator>
         ) : null}
       </NavigationContainer> */}
-      <NavigationContainer>
+      <NavigationContainer theme={themeState.theme}>
       {/* <BottomTab.Navigator  > */}
          {/* <BottomTab.Screen name="vvv" component={DrawerNavigator} /> */}
         
 
         {
           // auth?<BottomTabNavigator/> : <RootStackNavigator/>
-          auth?<DrawerNavigator/> : <RootStackNavigator/>
+          auth !== null ?<DrawerNavigator/> : <RootStackNavigator/>
 
         }
 

@@ -1,0 +1,1 @@
+export const IS_DARK_THEME = "IS_DARK_THEME";

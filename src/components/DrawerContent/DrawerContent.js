@@ -17,17 +17,22 @@ import {
     DrawerItem
 } from '@react-navigation/drawer';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './DrawerContentStyles';
 //import { Context as AuthContext } from '../../context/AuthContext'
+import useToggleTheme from '../../hooks/useTheme';
 
  const DrawerContent = (props) => {
 
-    const [isDarkTheme,setIsDarkTheme]=useState(false);
-    const toggleTheme = () =>{
-        setIsDarkTheme(!isDarkTheme);
-    }
+    const [toggleTheme, themeState] = useToggleTheme();
+     const {isDarkTheme} = themeState;
+
+     console.log("theme state in drawer",JSON.stringify(themeState))
+    //const [isDarkTheme,setIsDarkTheme]=useState(false);
+    // const toggleTheme = () =>{
+    //     setIsDarkTheme(!isDarkTheme);
+    // }
     //const { state,signout } = useContext(AuthContext);
     //const { username, email, id } = state
     const paperTheme = useTheme();
@@ -81,7 +86,7 @@ import styles from './DrawerContentStyles';
                     <DrawerItem
                         icon={({ color, size }) => (
                             <Icon
-                                name="account-outline"
+                                name="person-outline"
                                 color={color}
                                 size={size}
                             />
@@ -115,7 +120,7 @@ import styles from './DrawerContentStyles';
                     <DrawerItem
                         icon={({ color, size }) => (
                             <Icon
-                                name="account-check-outline"
+                                name="help-circle-outline"
                                 color={color}
                                 size={size}
                             />
@@ -125,7 +130,7 @@ import styles from './DrawerContentStyles';
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">
-                    <TouchableRipple onPress={() => {//toggleTheme()
+                    <TouchableRipple onPress={() => {alert("pressed");toggleTheme()
                     }}>
                         <View style={styles.preference}>
                             <Text>Dark Theme</Text>
@@ -141,7 +146,7 @@ import styles from './DrawerContentStyles';
             <DrawerItem
                 icon={({ color, size }) => (
                     <Icon
-                        name="exit-to-app"
+                        name="exit-outline"
                         color={color}
                         size={size}
                     />
