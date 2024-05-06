@@ -1,9 +1,9 @@
 import {  View } from 'react-native'
 import React from 'react'
 
-const VerticalSpacer = ({marginLeft, marginRight}) => {
+const VerticalSpacer = ({marginLeft, marginRight, testID}) => {
   return (
-    <View style={{marginLeft : marginLeft,marginRight: marginRight}}>
+    <View testID={testID} style={{marginLeft : marginLeft,marginRight: marginRight}}>
     </View>
   )
 }

@@ -4,6 +4,7 @@ import React from 'react'
 const InputField = (props) => {
   return (
     <TextInput 
+      testID={props.testID}
       placeholder={props.placeholder} style={props.inputFieldStyle} 
       label={props.label} textColor={props.textColor}
       autoCapitalize="none" secureTextEntry={props.secureTextEntry} 
