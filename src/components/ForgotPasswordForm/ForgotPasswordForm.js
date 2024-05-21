@@ -15,7 +15,7 @@ const handleReset = (email) => {
   sendPasswordResetEmail(auth, email)
     .then(() => {
       console.log("success");
-      alert("success")
+      //alert("success")
     })
     .catch((error) => {
       const errorCode = error.code;

@@ -44,9 +44,7 @@ const FirstRoute = () => (
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
-        style={{backgroundColor:"brown"}}
-        
-        
+        style={{backgroundColor:"brown"}}        
         
    
       />

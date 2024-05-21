@@ -34,7 +34,7 @@ const LoginForm = () => {
   .then((cred)=>{console.log("cred ",typeof cred,"user ",typeof cred.user,cred.user), " logged in";//setUser(cred) 
   console.log("data saving to async storage === ", cred.user,typeof cred.user);
   setStorageData(cred.user);
-  navigation.navigate("Dashboard")
+  //navigation.navigate("Dashboard")
 } )
   .catch((e)=>{console.log("************************error*************************",e)})
   

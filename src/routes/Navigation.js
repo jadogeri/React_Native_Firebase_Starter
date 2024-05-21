@@ -20,10 +20,10 @@ const Navigation = () => {
     const [auth, setAuth] = React.useState(null);
      AsyncStorage.getItem("user").
     then((res)=>{
-      alert(JSON.parse(res))
+      //alert(JSON.parse(res))
       setAuth(res);
     })
-    alert(typeof auth)
+    //alert(typeof auth)
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
  return (
@@ -74,7 +74,8 @@ const Navigation = () => {
 
         {
           // auth?<BottomTabNavigator/> : <RootStackNavigator/>
-          auth !== null ?<DrawerNavigator/> : <RootStackNavigator/>
+          auth !== null ? <DrawerNavigator/>
+           : <RootStackNavigator/>
 
         }
 

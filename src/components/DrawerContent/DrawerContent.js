@@ -23,6 +23,16 @@ import styles from './DrawerContentStyles';
 //import { Context as AuthContext } from '../../context/AuthContext'
 import useToggleTheme from '../../hooks/useTheme';
 
+// import { signOut } from "firebase/auth";
+import { signOut } from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getAuth } from 'firebase/auth';
+
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from '../../config/firebase';
+
+const value = initializeApp(firebaseConfig)
+console.log(value)
  const DrawerContent = (props) => {
 
     const [toggleTheme, themeState] = useToggleTheme();
@@ -36,7 +46,18 @@ import useToggleTheme from '../../hooks/useTheme';
     //const { state,signout } = useContext(AuthContext);
     //const { username, email, id } = state
     const paperTheme = useTheme();
+    const auth = getAuth();
+    const sign_out = ()=>{
 
+        signOut(auth)
+        .then(()=>{AsyncStorage.clear();
+                   alert("user signed out")})
+        .catch((e)=> alert(e))
+       //navigation.navigate("Login")
+    //    alert(typeof signOut);
+    //    alert(signOut === undefined ? "yes":"no")
+      
+    }
 
     return <View style={{ flex: 1 }}>
         <DrawerContentScrollView {...props} >
@@ -130,7 +151,7 @@ import useToggleTheme from '../../hooks/useTheme';
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">
-                    <TouchableRipple onPress={() => {toggleTheme()
+                    <TouchableRipple onPress={() => {alert("pressing toggle");toggleTheme()
                     }}>
                         <View style={styles.preference}>
                             <Text>Dark Theme</Text>
@@ -152,11 +173,14 @@ import useToggleTheme from '../../hooks/useTheme';
                     />
                 )}
                 label="Sign Out"
-                //onPress={() => { signout() }}
+                onPress={() => { sign_out()
+
+                 }}
             />
         </Drawer.Section>
     </View>
 }
+
 
 
 export default DrawerContent

@@ -10,7 +10,7 @@ const RootStack = createStackNavigator();
 
 export const RootStackNavigator = () => {
     return (
-      <RootStack.Navigator screenOptions={screenOptionStyle} headerMode='none'>
+      <RootStack.Navigator screenOptions={screenOptionStyle} headerShown='false'>
         <RootStack.Screen            
             name="GetStarted"
             component={GetStarted}

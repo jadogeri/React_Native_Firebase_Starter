@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import TabViewer from '../../routes/TopTab/TabViewer'
 
 const Chat = () => {
   return (
